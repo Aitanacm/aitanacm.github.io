@@ -42,7 +42,7 @@ header nav li {
     margin-top: 40px;
     display: inline-block;
     flex-direction: column;
-    font-size: 25px;
+    font-size: 23px;
     padding: 15px;
 }
 
@@ -52,23 +52,25 @@ header li {
 }
 
 header li:hover {
-    background-color: #FF0000
-        /*#FF0000*/
-    ;
+    background-color: #FF0000;
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header li:hover a {
+    background-color: #FF0000;
+    color: white;
+}
 .derecha {
     padding: 10px;
     min-width: 50vw;
     margin-right: 170px;
     text-decoration: none;
 }
-
-/*header>img {
-    width: 200px;
-    height: 220px;
-}*/
 
 /*BUSCADOR*/
 .box {
@@ -117,15 +119,6 @@ i {
 
 /*FIN CABECERA*/
 
-footer {
-    order: 100;
-}
-
-footer {
-    background-color: #FF0000;
-    height: 7vh;
-}
-
 article {
     order: 2;
     min-height: 86vh;
@@ -161,50 +154,25 @@ aside img:hover {
     filter: none;
     transform: scale(1.1);
 }
-
+.logo{
+    height: 130px;
+    width: 130px;
+}
 /*FIN ASIDE*/
 div.tronco {
     margin: 0;
-    background-color: #f8fcff;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-/*
-article>form{
-    border: 2px solid maroon;
-    background-color: white;
-    padding: 8px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-}
-article>form>input{
-    background-color: white;
-    color: black;
-    
-}
-article>form>input.text{
-    margin: 2px;
-    border: 2px solid maroon;
-    border-radius: 5px;
-    width: 13vw;
-    font-weight: bold;
-}
-article>form>div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-}*/
 div.horaDestino {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 100px;
 }
 
 .horaDestino p, .tiempo p {
@@ -376,8 +344,52 @@ section:hover {
 section:not(section.mejorOferta):not(section.masBarato):hover {
     border: 3px solid #3005a8;
 }
+/*FOOTER*/
 
-@media only screen and (max-width: 600px) {
+iframe
+{
+    padding-left: 180px;
+}
+
+footer
+{
+    border-top: 5px solid #0080ff;
+    padding: 20px;
+    background-color: #444444;
+    color: white;
+    
+}
+footer>div {
+    display: flex;
+    flex-direction: row;
+}
+
+.pie
+{
+    float: left;
+    text-align: left;
+    border-left: 1px solid #ffffff3d;
+    border-right: 1px solid #ffffff3d;
+    padding: 5px;
+}
+
+.pie>div
+{
+    padding: 15px;
+}
+.pie>div>span
+{
+    padding: 15px;
+}
+
+.pie>h3
+{
+
+    align-self: center;
+}
+/**/
+
+@media only screen and (max-width: 420px) {
     body{
         margin: 0;
     }
@@ -388,11 +400,14 @@ section:not(section.mejorOferta):not(section.masBarato):hover {
         align-items: center;
         max-width: 100vw;
         min-height: 100vh;
-        overflow: hidden;
+        font-size: 10pt;
     }
-
-    div.tronco {
-        margin: 0;
+    .logo{
+        height: 100px;
+        width: 100px;
+    }
+    div.tronco {        
+        margin: 0px;
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -403,21 +418,28 @@ section:not(section.mejorOferta):not(section.masBarato):hover {
     .boton {
         width: 30vw;
         height: 6vh;
-        margin-left: 30%;
+        margin-left: 8%;
     }
-
+    aside img{
+        height: 225px;
+        width: 325px;
+        filter: none;
+        margin-left: 0%;
+    }
     header {
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: center;
         width: 100vw;
         margin-top: 0;
         position: inherit;
-        min-height: 20vh;
+        min-height: 30vh;
     }
     .secciones{
         display: flex;
         flex-direction: column;
+
     }
     .vertical{
         height: 0vh;
@@ -426,19 +448,25 @@ section:not(section.mejorOferta):not(section.masBarato):hover {
     .horizontal{
         width: 50%;
     }
-    .detallesVuelo{
+    .detallesVuelo,.vuelos,.vuelo{
         margin: 0;
         padding: 0;
     }
-    .vuelos,.vuelo{
-        padding: 0%;
-    }
-    section.mejorOferta,section.masBarato,section:not(section.mejorOferta):not(section.masBarato) {
+    section {
         padding: 2%;
-        margin: 10%;
+        margin-left: 15%;
+        width: fit-content;
+    }
+    .tiempo img{
+        width: 80;
+        height: 20px;
     }
     .derecha{
         margin: 0;
+        max-width: 100vw;
+    }
+    nav{
+        max-width: 100vw;
     }
     ul.nav-items{
         display: none;
@@ -456,9 +484,39 @@ section:not(section.mejorOferta):not(section.masBarato):hover {
     }
     header nav li{
         font-size: 13pt;
+        margin: 0;
+        padding: 2px 20px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    header li:hover a {
+        background-color: #FF0000;
+        color: white;
     }
     .box {
         margin: 0;
         display: none;
+    }
+    div.imagenCompañia img{
+        width: 25px;
+        height: 25px;
+    }
+    div.imagenCompañia, .horaDestino, .tiempo, .info{
+        margin: 0;
+    }
+    footer {
+        background-color: #FF0000;
+        height: 7vh;
+        min-width: 100vw;
+    }
+    footer>div{
+        display: none;
+    }
+    footer h1{
+        font-size: 11pt;
+        text-align: center;
     }
 }
