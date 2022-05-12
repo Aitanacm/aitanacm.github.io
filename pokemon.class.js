@@ -73,7 +73,9 @@ class Pokemon {
 
         let next = document.createElement("button");
         next.className = "btn text-light next";
-        next.textContent = ">"
+
+        let nextImg = document.createElement("img");
+        nextImg.src = "img/caret-right-fill.svg";
 
 
         let cbttons = document.createElement("div");
@@ -81,7 +83,9 @@ class Pokemon {
 
         let prev = document.createElement("button");
         prev.className = "btn text-light previous";
-        prev.textContent = "<";
+
+        let prevImg = document.createElement("img");
+        prevImg.src = "img/caret-left-fill.svg";
 
         let colorMode = document.createElement("button");
         colorMode.className = "btn color-mode";
@@ -123,11 +127,13 @@ class Pokemon {
 
         document.body.querySelector(".card-body").appendChild(cbttons);
         document.body.querySelector(".buttons").appendChild(prev);
+        document.body.querySelector(".previous").appendChild(prevImg);
         document.body.querySelector(".buttons").appendChild(colorMode);
         document.body.querySelector(".color-mode").appendChild(colorModeImg);
         document.body.querySelector(".buttons").appendChild(backgrnd);
         document.body.querySelector(".background").appendChild(backgrndImg);
         document.body.querySelector(".buttons").appendChild(next);
+        document.body.querySelector(".next").appendChild(nextImg);
 
         document.querySelector(".next").addEventListener("click", function () {
             Pokemon.getPokemon(num + 1 > 898 ? num = 1 : ++num).then(
@@ -190,13 +196,11 @@ class Pokemon {
         colorMode.addEventListener("click", function () {
             if (card.className.includes("bg-light")) {
                 modoActual = card.className = card.className.replace("bg-light text-dark", "bg-dark text-light");
-                colorModeImg.style.filter = "invert()"
-                backgrndImg.style.filter = "invert()"
+                colorModeImg.style.filter = nextImg.style.filter = prevImg.style.filter = backgrndImg.style.filter = "invert()"
             }
             else {
                 modoActual = card.className = card.className.replace("bg-dark text-light", "bg-light text-dark");
-                colorModeImg.style.filter = "none"
-                backgrndImg.style.filter = "none"
+                colorModeImg.style.filter = nextImg.style.filter = prevImg.style.filter = backgrndImg.style.filter = "none"
             }
         });
         backgrnd.addEventListener("click", function () {
