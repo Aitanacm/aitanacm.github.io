@@ -21,10 +21,10 @@ class Pokemon {
 
         let main = document.createElement("main");
         main.className = "d-flex justify-content-center align-items-center";
-        main.style.background = "url(img/isla-pokemon.png) 0% 0% / cover no-repeat";
+        main.style.background = fondoActual;
 
         let card = document.createElement("div");
-        card.className = "card bg-light text-dark";
+        card.className = "card " + modoActual;
 
         let cheader = document.createElement("div");
         cheader.className = "card-header";
@@ -179,7 +179,6 @@ class Pokemon {
             })
         });
         expdiv.addEventListener("click", function () {
-            img.style.filter = "invert()";
             img.animate([
                 { transform: 'rotateY(180deg)' },
                 { transform: 'rotateY(-180deg)' },
@@ -187,29 +186,28 @@ class Pokemon {
             ], {
                 duration: 2000
             })
-            img.style.filter = "none";
         });
         colorMode.addEventListener("click", function () {
             if (card.className.includes("bg-light")) {
-                card.className = card.className.replace("bg-light text-dark", "bg-dark text-light");
+                modoActual = card.className = card.className.replace("bg-light text-dark", "bg-dark text-light");
                 colorModeImg.style.filter = "invert()"
                 backgrndImg.style.filter = "invert()"
             }
             else {
-                card.className = card.className.replace("bg-dark text-light", "bg-light text-dark");
+                modoActual = card.className = card.className.replace("bg-dark text-light", "bg-light text-dark");
                 colorModeImg.style.filter = "none"
                 backgrndImg.style.filter = "none"
             }
         });
         backgrnd.addEventListener("click", function () {
             if (main.style.background == 'url("img/isla-pokemon.png") 0% 0% / cover no-repeat') {
-                main.style.background = 'url("img/pokemon-in-the-wild.png") 0% 0% / cover no-repeat'
+                fondoActual = main.style.background = 'url("img/pokemon-in-the-wild.png") 0% 0% / cover no-repeat'
             }
             else if (main.style.background == 'url("img/pokemon-in-the-wild.png") 0% 0% / cover no-repeat') {
-                main.style.background = 'url("img/forest.jpg") 0% 0% / cover no-repeat';
+                fondoActual = main.style.background = 'url("img/forest.jpg") 0% 0% / cover no-repeat';
             }
             else {
-                main.style.background = 'url("img/isla-pokemon.png") 0% 0% / cover no-repeat';
+                fondoActual = main.style.background = 'url("img/isla-pokemon.png") 0% 0% / cover no-repeat';
             }
         });
     }
