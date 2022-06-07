@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tienda>
+    <producto>
+        <nombre>Vinilos</nombre>
+        <descripcion>Disfruta de nuestros vinilos, consigue el de tu cantante o género
+                favorito y monta tu propia colección.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Tocadiscos</nombre>
+        <descripcion>Disfruta de nuestros tocadiscos, reproduce tus vinilos y disfruta de tu música favorita.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Accesorios</nombre>
+        <descripcion>Disfruta de nuestros accesorios para mejorar tu experiencia, consigue limpiadores, alfombrillas...</descripcion>
+    </producto>
+    <producto>
+        <nombre>Altavoces</nombre>
+        <descripcion>Disfruta de nuestros altavoces, consigue un volumen más potente para tus tocadiscos.</descripcion>
+    </producto>
+</tienda>
